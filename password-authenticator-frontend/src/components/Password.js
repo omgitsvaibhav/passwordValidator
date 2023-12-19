@@ -80,8 +80,7 @@ export default function PasswordCheck() {
           />
         </div>
         <div id="Password-validator">
-          {passwordValue.length > 0 && isValid && <p className="strong">{passwordText}</p>}
-          {passwordValue.length > 0 && !isValid && <p className="weak">{passwordText}</p>}
+          {passwordValue.length>0 && <p className={isValid ? "strong":"weak"}>{passwordText}</p>}
         </div>
         <div id="password-steps">
           {isValid && <p>Steps : {passwordSteps}</p>}
