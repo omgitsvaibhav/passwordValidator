@@ -60,7 +60,8 @@ export default function PasswordCheck() {
         alert("Password saved successfully!");
       })
       .catch((error) => {
-        console.error(`error occurred in saving password: ${error}`);
+        const{status, message} = error.response;
+        console.error(`error occurred in saving password: ${message}, status: ${status}`);
       });
     SetpasswordValue("");
   }

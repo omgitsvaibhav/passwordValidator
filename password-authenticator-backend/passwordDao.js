@@ -13,13 +13,13 @@ export default class PasswordDao {
     }
   }
 
-  static async storePassword(passwordValue) {
+  static async storePassword(passwordHashValue) {
     try {
-      const passwordDoc = await password.insertOne({ password: passwordValue });
+      const passwordDoc = await password.insertOne({ password: passwordHashValue });
+      //console.log(passwordDoc);
       return passwordDoc;
     } catch (e) {
       console.error(`unable to store password: ${e}`);
-      return {error:e};
     }
   }
 }
