@@ -1,0 +1,17 @@
+name: Password Validator
+
+on:
+  push:
+   branches:
+    - 'main'
+  pull_requests:
+   branches:
+    - 'main'
+
+jobs:
+ hello:
+  runs-on: ubuntu-latest
+
+  steps:
+   - name: hello step
+     run: echo "hello"
