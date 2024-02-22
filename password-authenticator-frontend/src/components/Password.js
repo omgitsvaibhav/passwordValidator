@@ -60,8 +60,10 @@ export default function PasswordCheck() {
         alert("Password saved successfully!");
       })
       .catch((error) => {
-        const{status, message} = error.response;
-        console.error(`error occurred in saving password: ${message}, status: ${status}`);
+        const { status, message } = error.response;
+        console.error(
+          `error occurred in saving password: ${message}, status: ${status}`
+        );
       });
     SetpasswordValue("");
   }
@@ -80,7 +82,9 @@ export default function PasswordCheck() {
           />
         </div>
         <div id="Password-validator">
-          {passwordValue.length>0 && <p className={isValid ? "strong":"weak"}>{passwordText}</p>}
+          {passwordValue.length > 0 && (
+            <p className={isValid ? "strong" : "weak"}>{passwordText}</p>
+          )}
         </div>
         <div id="password-steps">
           {isValid && <p>Steps : {passwordSteps}</p>}
